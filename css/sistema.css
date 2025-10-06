@@ -1,0 +1,119 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 90px;
+   padding-top: 10px;
+  /* font: Arial, Helvetica, sans-serif; */
+  
+}
+
+.botonesmenu {
+	width: 200px;
+	height: :190px;
+	   padding-bottom:  28px;
+	   padding-top:  28px;
+    font-size: 18px;
+    line-height:  normal;
+
+}
+
+.tglobales {
+  background: #DBE6FE; 
+  
+}
+
+.filtros {
+  text-decoration: none;
+  font-weight: normal;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  width: 100%;
+  
+}
+
+.starter-template {
+  padding: 40px 0px;
+  margin-top: 20px;
+  
+}
+
+.table-responsive {
+	max-height: 500px;
+	
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; 
+  height: 80px; /* Set the fixed height of the footer here */
+  background-color: #333333;
+
+}
+
+.footerbotones {
+ margin-top: 30px;
+}
+
+.column_wordwrap {
+  word-wrap: break-word;
+}
+
+
+.container {
+  width: auto;
+  max-width: 1024px;
+  padding: 0 15px;
+}
+
+.enpromo {
+	color: #6E006E;
+}
+
+.pantallaingreso {
+  max-width: 400px;
+}
+
+/* Fix alignment issue of label on extra small devices in Bootstrap 3.2 */
+.form-horizontal .control-label{
+        padding-top: 7px;
+    }
+    
+
+ table.dataTable th,
+    table.dataTable td {
+        white-space: nowrap;
+    }
+    
+/*Charts*/
+ 
+
+.easypiechart-panel {
+	text-align: center;
+ 
+}
+ 
+
+.easypiechart {
+	position: relative;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	margin: 20px auto 10px auto;
+}
+
+.easypiechart .percent {
+	display: block;
+	position: absolute;
+	font-size: 16px;
+	top: 24px;
+	width: 100px;
+}
+
+#easypiechart-blue .percent { color: #30a5ff;}
+#easypiechart-teal .percent { color: #1ebfae;}
+#easypiechart-orange .percent { color: #ffb53e;}
+#easypiechart-red .percent { color: #ef4040;}

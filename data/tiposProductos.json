@@ -1,0 +1,30 @@
+[
+    {
+        "value": "Vehiculo Nuevo",
+        "label": "Vehículo Nuevo"
+    },
+    {
+        "value": "Vehiculo Usado",
+        "label": "Vehículo Usado"
+    },
+    {
+        "value": "Flota de Vehiculos",
+        "label": "Flota de Vehículos"
+    },
+    {
+        "value": "Servicio de Taller de Mecanica",
+        "label": "Servicio de Taller de Mecánica"
+    },
+    {
+        "value": "Servicio de Taller de Pintura y Enderezado",
+        "label": "Servicio de Taller de Pintura y Enderezado"
+    },
+    {
+        "value": "Productos Automotrices",
+        "label": "Productos Automotrices"
+    },
+    {
+        "value": "Otros",
+        "label": "Otros"
+    }
+]

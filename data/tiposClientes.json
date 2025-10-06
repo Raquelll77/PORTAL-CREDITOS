@@ -1,0 +1,58 @@
+[
+    {
+        "value": "PEP",
+        "label": "PEP"
+    },
+    {
+        "value": "Publico no PEP",
+        "label": "Publico no PEP"
+    },
+    {
+        "value": "Privado",
+        "label": "Privado"
+    },
+    {
+        "value": "Estudiante",
+        "label": "Estudiante"
+    },
+    {
+        "value": "Ama de casa",
+        "label": "Ama de casa"
+    },
+    {
+        "value": "Pensionado",
+        "label": "Pensionado"
+    },
+    {
+        "value": "Independiente Formal",
+        "label": "Independiente Formal"
+    },
+    {
+        "value": "Informal",
+        "label": "Informal"
+    },
+    {
+        "value": "APNFD",
+        "label": "APNFD"
+    },
+    {
+        "value": "Registrada",
+        "label": "Registrada"
+    },
+    {
+        "value": "No registrada",
+        "label": "No registrada"
+    },
+    {
+        "value": "Extranjero residente",
+        "label": "Extranjero residente"
+    },
+    {
+        "value": "Extranjero No residente",
+        "label": "Extranjero No residente"
+    },
+    {
+        "value": "Otro",
+        "label": "Otro"
+    }
+]

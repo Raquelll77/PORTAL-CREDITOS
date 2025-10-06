@@ -1,0 +1,185 @@
+    <div class="container" style="padding: 20px;">
+        <style>
+            h3 {
+                text-align: center;
+            }
+            /* .header {
+                text-align: center;
+            } */
+            .tableHeader {
+                width: 70% !important ; 
+                height: 50% !important ;  
+                border-collapse: collapse;
+            }
+            .tableContact {
+                width: 50% !important ; 
+                height: 50% !important ;  
+                border-collapse: collapse;
+            }
+            .tableHeader td {
+                /* border: 1px solid black; */
+                padding: 5px;
+            }
+            .tableContact td {
+                border: 1px solid black;
+                padding: 5px;
+            }
+            .title {
+                width: 100%;
+                border: 1px solid black;
+                text-align: center;
+            }
+            .tableCuotaIngreso {
+                width: 50%;
+                border-collapse: collapse;
+            }
+            .tableCuotaIngreso td {
+                border: 1px solid black;
+                padding: 5px;
+            }
+            .tableEndeudamiento {
+                width: 50%;
+                border-collapse: collapse;
+            }
+            .tableEndeudamiento td {
+                border: 1px solid black;
+                padding: 5px;
+            }
+            .tdColor {
+                background-color: #FFFF99;
+            }
+            .tdSeparated {
+                border: none !important; 
+                text-align: center !important;
+            }
+        </style>
+        <div class="header">
+            <img src="{logo}" alt="Logo MOVESA">
+        </div>
+
+        <br>
+
+        <table class="tableHeader">
+            <tr>
+                <td><i>Solicitud N.</i></td>
+                <td>{numero}</td>
+            </tr>
+            <tr>
+                <td><i>Nombre del Cliente</i></td>
+                <td>{cliente_nombre}</td>
+            </tr>
+            <tr>
+                <td><i>Identidad</i></td>
+                <td>{cliente_identidad}</td>
+            </tr>
+            <tr>
+                <td><i>Sueldo Bruto L</i></td>
+                <td>L. 30,235.00</td>
+            </tr>
+            <tr>
+                <td><i>Obligaciones</i></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><i>SCORE</i></td>
+                <td>720</td>
+            </tr>
+            <tr>
+                <td><i>STATUS</i></td>
+                <td>ANALISIS 24 HRS</td>
+            </tr>
+        </table>
+
+        <p>&nbsp;&nbsp;</p>
+
+        <table class="title">
+            <tr>
+                <td><b>Cálculo Relación Cuota Ingreso</b></td>
+            </tr>
+        </table>
+        <table class="tableCuotaIngreso">
+            <tr>
+                <td><i>Perfil</i></td>
+                <td class="tdColor"><i><b>{perfil}</b></i></td>
+            </tr>
+            <tr>
+                <td><i>Valor del vehículo</i></td>
+                <td><i>{moto_valor}</i></td>
+            </tr>
+            <tr>
+                <td><i>Prima <b>(50%)</b></i></td>
+                <td><i>{monto_prima}</i></td>
+            </tr>
+            <tr>
+                <td><i>Valor a Financiar</i></td>
+                <td class="tdColor"><i><b>{monto_financiar}</b></i></td>
+            </tr>
+            <tr>
+                <td><i>Tasa</i></td>
+                <td class="tdColor"><i><b>48.00%</b></i></td>
+            </tr>
+            <tr>
+                <td><i>Plazo</i></td>
+                <td><i>{plazo}</i></td>
+                <td class="tdSeparated"><i><b>Sueldo Requerido</b></i></td>
+            </tr>
+            <tr>
+                <td><i>Cuota Mensual</i></td>
+                <td><i><b>{cuota_mensual}</b></i></td>
+                <td class="tdSeparated tdColor"><i><b>L. 13,881.29.00</b></i></td>
+            </tr>
+        </table>
+
+        <p>&nbsp;&nbsp;</p>
+
+        <table class="title">
+            <tr>
+                <td><b>Nivel de Endeudamiento</b></td>
+            </tr>
+        </table>
+        <table class="tableEndeudamiento">
+            <tr>
+                <td>Sueldo Neto</td>
+                <td>L. 30,325.00</td>
+            </tr>
+            <tr>
+                <td>Banca</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Tarjetas</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Comercio</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nuevo Préstamo <b>MOVESA</b></td>
+                <td>{monto_prestamo}</td>
+            </tr>
+            <tr>
+                <td>Otros</td>
+                <td></td>
+                <td class="tdSeparated"><i><b>Nivel de Endeudamiento</b></i></td>
+            </tr>
+            <tr>
+                <td>Total Obligaciones</td>
+                <td>5,552.52</td>
+                <td style="background-color: #00c521;" class="tdSeparated"><i><b>18%</b></i></td>
+            </tr>
+        </table>
+
+        <br>
+        <p>SKG S.A de C.V</p>
+        <p>BANCO ATLANTIDA 20111018444</p>
+
+        <table class="tableContact">
+            <tr>
+                <td><p>Fernando Trejo Cel: 3292-9647</p></td>
+                <td><p>Telecobros Cel: 3144-0901</p></td>
+            </tr>
+        </table>
+
+        <p>Notificar pago cuando es en Banco para poder aplicarlo a su cuenta</p>
+    </div>

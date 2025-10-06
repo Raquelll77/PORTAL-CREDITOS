@@ -1,0 +1,78 @@
+[
+    {
+        "value": "",
+        "label": "Seleccione"
+    },
+    {
+        "value": "Atlantida",
+        "label": "Atlantida"
+    },
+    {
+        "value": "Choluteca",
+        "label": "Choluteca"
+    },
+    {
+        "value": "Colon",
+        "label": "Colon"
+    },
+    {
+        "value": "Comayagua",
+        "label": "Comayagua"
+    },
+    {
+        "value": "Copan",
+        "label": "Copan"
+    },
+    {
+        "value": "Cortes",
+        "label": "Cortes"
+    },
+    {
+        "value": "El Paraiso",
+        "label": "El Paraiso"
+    },
+    {
+        "value": "Francisco Morazan",
+        "label": "Francisco Morazan"
+    },
+    {
+        "value": "Gracias a Dios",
+        "label": "Gracias a Dios"
+    },
+    {
+        "value": "Intibuca",
+        "label": "Intibuca"
+    },
+    {
+        "value": "Islas de la Bahia",
+        "label": "Islas de la Bahia"
+    },
+    {
+        "value": "La Paz",
+        "label": "La Paz"
+    },
+    {
+        "value": "Lempira",
+        "label": "Lempira"
+    },
+    {
+        "value": "Ocotepeque",
+        "label": "Ocotepeque"
+    },
+    {
+        "value": "Olancho",
+        "label": "Olancho"
+    },
+    {
+        "value": "Santa Barbara",
+        "label": "Santa Barbara"
+    },
+    {
+        "value": "Valle",
+        "label": "Valle"
+    },
+    {
+        "value": "Yoro",
+        "label": "Yoro"
+    }
+]

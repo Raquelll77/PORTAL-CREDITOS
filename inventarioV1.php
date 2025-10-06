@@ -1,0 +1,1 @@
+ESTE MODULO A SIDO MIGRADO Y DESABILITADO, PODRAS VERLO DESDE EL <a href="http://web.grupomovesa.com/portal/login.php">PORTAL > INVENTARIO > INFORMES</a>

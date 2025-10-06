@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solicitud de Créditos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .solicitud-credito {
+        border: 2px solid #000;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto;
+      }
+
+      td {
+        /* border: 1px solid #000; */
+        font-size: 18px;
+      }
+
+      th {
+        font-size: 20px;
+      }
+
+      .header {
+        /* text-align: center; */
+        padding: 20px;
+        font-size: 32px;
+        border-bottom: 1px solid #000;
+      }
+
+      .logo {
+        width: 100px;
+        height: auto;
+      }
+
+      .titulo {
+        font-weight: bold;
+      }
+
+      .top {
+        border-top: 1px solid #000;
+      }
+
+      .bottom {
+        border-bottom: 1px solid black;
+      }
+
+      .left {
+        border-left: 1px solid black;
+      }
+
+      .right {
+        border-right: 1px solid black;
+      }
+
+      .border {
+        border: 1px solid black;
+      }
+
+      .border2 {
+        border: 1.5px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th
+          colspan="2"
+          class="header left top"
+          style="background-color: #ececec"
+        >
+          <img src="images/LogoSKG.png" alt="" srcset="" />
+        </th>
+        <th colspan="2" class="header top" style="background-color: #ececec">
+          <div class="titulo" style="text-align: center">
+            SOLICITUD DE CRÉDITOS
+          </div>
+          <div style="text-align: center">Persona Natural</div>
+        </th>
+        <th
+          colspan="2"
+          class="header right top"
+          style="background-color: #ececec"
+        >
+          <img src="images/LogoSKG.png" alt="" srcset="" />
+        </th>
+      </tr>
+      <colgroup>
+        <col style="width: 16.66%" />
+        <col style="width: 16.66%" />
+        <col style="width: 16.66%" />
+        <col style="width: 16.66%" />
+        <col style="width: 16.66%" />
+        <col style="width: 16.66%" />
+      </colgroup>
+      <tr>
+        <td colspan="2" class="bottom left">
+          Monto: {cierre_total_usd_contado}
+        </td>
+        <td colspan="2" class="bottom">Plazo: {cierre_plazo} meses</td>
+        <td colspan="2" class="bottom right">
+          Prima: {cierre_total_prima_usd}
+        </td>
+      </tr>
+      <tr>
+        <td class="bottom left" colspan="1">Modelo: {moto_modelo}</td>
+        <td class="bottom" colspan="2">Marca: {moto_marca}</td>
+        <td class="bottom" colspan="1">Costo RTN: {costo_rtn}</td>
+        <td class="bottom right" colspan="2">
+          Gastos Administrativos: {gastos_administrativos}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="left right">
+          Código de Cliente: {codigo_cliente}
+        </td>
+        <td colspan="3" class="right">Sucursal: {sucursal_tienda}</td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>I. Productos y/o Servicios Solicitados</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          Vehiculo Nuevo ( {vehiculo_nuevo} ) &nbsp;&nbsp;&nbsp;&nbsp; Vehiculo
+          Usado ( {vehiculo_usado} ) &nbsp;&nbsp;&nbsp;&nbsp; Flota de Vehiculos
+          ( {flota_vehiculos} ) &nbsp;&nbsp;&nbsp;&nbsp; Servicio de Taller de
+          Mecanica ( {servicio_taller_mecanica} ) &nbsp;&nbsp;&nbsp;&nbsp;
+          Servicio de Taller de Pintura y Enderezado ( {servicio_taller_pintura}
+          )
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Productos Automotrices ( {productos_automotrices} )
+          &nbsp;&nbsp;&nbsp;&nbsp; Otros ( {otros} ) &nbsp;&nbsp;&nbsp;&nbsp;
+          Especificar: {otro_cargo_servicio_especificar}
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>II. Tipo de Vehiculo y/o Contrato de mantenimiento</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          Motocicleta ( {motocicleta} ) &nbsp;&nbsp; Cuatrimoto( {cuatrimoto} )
+          &nbsp;&nbsp; Motocargo( {motocargo} ) &nbsp;&nbsp; Mototaxi(
+          {mototaxi} ) &nbsp;&nbsp; Otro( {otro} )
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          1 vehiculo ( {uno} ) &nbsp;&nbsp; 2-5 vehiculos ( {dos_a_cinco} )
+          &nbsp;&nbsp; 6-50 vehiculos ( {seis_a_cincuenta} ) &nbsp;&nbsp; Más de
+          50 vehiculos ( {mas_cincuenta} ) &nbsp;&nbsp; No. Exacto de vehiculos:
+          {numero_exacto}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          Compra de Productos Automotrices o Servicio Taller (Especificar):
+          {compra_productos}
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>III. Tipo de relación comercial con la Empresa</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          El cliente es: Nuevo ( {nuevo} ) &nbsp;&nbsp; Recompra ( {recompra} )
+          &nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;&nbsp; Uso de la unidad:
+          Personal ( {personal} ) &nbsp;&nbsp; Comercial ( {comercial} )
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="4">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>IV. Datos de la Persona Natural</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">Nombre Completo: {nombre_completo}</td>
+        <td colspan="2" class="border">No. RTN: {rtn}</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">
+          Tipo de Identificación: DNI( {dniNueva} ) &nbsp;&nbsp; ID Vieja(
+          {idVieja} ) &nbsp;&nbsp; Carné de Residente( {residente} )
+          &nbsp;&nbsp; Licencia de conducir Vigente( {licenciaConducir} )
+        </td>
+        <td colspan="2" class="border">Nacionalidad: {cliente_nacionalidad}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="border">N° de Identificación: {identidad}</td>
+        <td colspan="4" class="border">
+          Lugar de Nacimiento: {lugar_nacimiento} &nbsp;&nbsp; Fecha de
+          Nacimiento: {fecha_nacimiento} &nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">
+          ¿Tiene otra nacionalidad? Si( {siNacionalidad} ) &nbsp;&nbsp; No(
+          {noNacionalidad} ) ¿Cuál?: {nacionalidadExtra}
+        </td>
+        <td colspan="2" class="border">
+          Género: &nbsp;&nbsp; F( {femenino} ) M( {masculino} )
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">
+          Estado Civil: Soltero(a)( {soltero} ) &nbsp;&nbsp; Casado(a)( {casado}
+          ) &nbsp;&nbsp; Viudo(a)( {viudo} ) &nbsp;&nbsp; Divorciado(a)(
+          {divorciado} ) &nbsp;&nbsp; Unión Libre( {unionLibre} )
+        </td>
+        <td colspan="2" class="border">
+          Clave primaria Empresa de Energía Eléctrica: {claveEnee}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">Dirección de Residencia: {direccion}</td>
+        <td colspan="2" class="border">País: {pais}</td>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Departamento: {departamento} &nbsp;&nbsp; Municipio: {municipio}
+          &nbsp;&nbsp; Ciudad: {ciudad} &nbsp;&nbsp; Aldea/Caserío:
+          {aldea_caserio}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="left right">
+          Avenida: {avenida} &nbsp;&nbsp; Calle: {calle} &nbsp;&nbsp;
+          Sector/Edificio: {sector_edificio} &nbsp;&nbsp; Bloque/Piso:
+          {bloque_piso} &nbsp;&nbsp; Casa/Apartamento: {casa_apartamento}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Punto de Referencia: {direccion_referencia}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          Teléfono Fijo: {telefono_fijo} &nbsp;&nbsp; Teléfono Móvil:
+          {telefono_movil} &nbsp;&nbsp; Correo Electrónico: {correo}
+        </td>
+      </tr>
+	  
+    </table>
+	    <table style="border-collapse: collapse; width: 100%" cellpadding="4">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>IV. Datos del Aval</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">Nombre Completo: {aval_nombre}</td>
+        <td colspan="2" class="border">No. identidad: {aval_identidad}</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">
+          ¿Tiene otra nacionalidad? Si( {siNacionalidad} ) &nbsp;&nbsp; No(
+          {noNacionalidad} ) ¿Cuál?: {nacionalidadExtra}
+        </td>
+        <td colspan="2" class="border">
+  Género: &nbsp;&nbsp; F( {aval_femenino} ) M( {aval_masculino} )
+</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">Dirección de Residencia: {aval_direccion}</td>
+        <td colspan="2" class="border">Estado Civil: {aval_estado_civil}</td>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Departamento: {aval_departamento} &nbsp;&nbsp; Ciudad: {aval_ciudad} &nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Punto de Referencia: {aval_direccion_referencia}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          Teléfono Móvil:
+          {aval_celular} &nbsp;&nbsp; Correo Electrónico: {aval_email}
+        </td>
+      </tr>
+	  
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>V. Tipo de vivienda</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Alquila( {alquila} ) &nbsp;&nbsp; Propia( {propia} ) &nbsp;&nbsp;
+          Hipotecada( {hipotecada} ) &nbsp;&nbsp; Familiar( {familiar} )
+          &nbsp;&nbsp; Cedida por la Empresa( {cedida} )
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          Tiempo de Residir en el domicilio: {antiguedad_vivienda}
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>VI. Información del Cónyuge: (Sí aplica)</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">
+          Nombre Completo: {nombreConyugue} &nbsp;&nbsp; Teléfono:
+          {telefonoConyugue}
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>VII. Tipo de Cliente</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="bottom left right">{{grd_tipo_cliente}}</td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>VIII. Información Laboral: {{grd_tipo_empleo}}</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="3" class="bottom left right">
+          Nombre de la empresa: {nombre_empresa}
+        </td>
+        <td colspan="3" class="bottom left right">
+          Cargo o Puesto que desempeña: {cargo}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="bottom left right">
+          La empresa es propia Si( {empresa_propia} ) No( {empresa_no_propia} )
+        </td>
+        <td colspan="3" class="bottom left right">
+          Actividad Económica: {empleado_actividad_economica}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="bottom left right">Profesión: {profesion}</td>
+        <td colspan="3" class="bottom left right">
+          Ocupación u oficio: {ocupacion}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="bottom left right">
+          Rango de Ingreso Mensual: {empleado_rango_mensual}
+        </td>
+        <td colspan="2" class="bottom left right">
+          Tiempo de laborar en la empresa: {empleado_antiguedad}
+        </td>
+        <td colspan="2" class="bottom left right">
+          Teléfono: {empresa_telefono}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="bottom left right">
+          Dirección de la empresa: {direccion_empresa}
+        </td>
+        <td colspan="2" class="bottom left right">
+          Casa Matriz: {casa_matriz}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="bottom left right">
+          Departamento: {empresa_departamento}
+        </td>
+        <td colspan="2" class="bottom left right">
+          Municipio: {empresa_municipio}
+        </td>
+        <td colspan="2" class="bottom left right">
+          Avenida: {empresa_avenida}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="left right">
+          Calle: {empresa_calle} &nbsp;&nbsp; Sector/Edificio:
+          {empresa_sector_edificio} &nbsp;&nbsp; Bloque/Piso:
+          {empresa_bloque_piso} &nbsp;&nbsp;Casa/Apartamento:
+          {empresa_casa_apartamento}
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>IX. El origen de los fondos es producto de:</b>
+        </th>
+      </tr>
+      <tr>
+        <td class="border">El Salario( {empresa_salario} )</td>
+        <td colspan="2" class="border">Jubilación o Pensión( {jubilacion} )</td>
+        <td colspan="2" class="border">
+          Venta de Bienes muebles/inmuebles( {bienes_inmuebles} )
+        </td>
+        <td class="border">Remesas( {remesas} )</td>
+      </tr>
+      <tr>
+        <td class="border">Renta o Alquileres( {renta} )</td>
+        <td colspan="2" class="border">Negocio Propio( {negocio_propio} )</td>
+        <td colspan="2" class="border">Ahorros( {ahorros} )</td>
+        <td class="border"></td>
+      </tr>
+      <tr>
+        <td class="border">Herencia( {herencia} )</td>
+        <td colspan="2" class="border">Premios de Lotería( {premios} )</td>
+        <td colspan="2" class="border">
+          Préstamo interno( {prestamo_interno} )
+        </td>
+        <td class="border"></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="border">
+          Otros Orígenes( {empresa_salario_otro} ); Especifique:
+          {empresa_salario_otro_tipo}
+        </td>
+        <td colspan="3" class="border">
+          Préstamo Externo( {prestamo_externo} ); Especifique:
+          {prestamo_externo_especifique}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">
+          El origen de los fondos fue proporcionado por un tercero Si(
+          {fondo_de_tercero} ) No( {fondo_no_de_tercero} ) Monto:
+          {monto_tercero}
+        </td>
+        <td colspan="2" class="border">Vínculo: {vinculo_tercero}</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="border">
+          Nombre completo del tercero: {nombre_tercero}
+        </td>
+        <td colspan="2" class="border">
+          N° de Identificación: {identificacion_tercero}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="border">
+          Actividad económica: {actividad_tercero}
+        </td>
+        <td colspan="2" class="border">
+          Ingresos mensuales del tercero: {ingreso_tercero}
+        </td>
+        <td colspan="2" class="border">N° de Teléfono: {telefono_tercero}</td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>X. Referencias Personales</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="2" class="bottom left">1. {ref1_nombre}</td>
+        <td colspan="2" class="bottom">Parentesco: {ref1_relacion}</td>
+        <td colspan="2" class="bottom right">
+          Celular: {ref1_telefono_celular}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="bottom left">2. {ref2_nombre}</td>
+        <td colspan="2" class="bottom">Parentesco: {ref2_relacion}</td>
+        <td colspan="2" class="bottom right">
+          Celular: {ref2_telefono_celular}
+        </td>
+      </tr>
+      <tr>
+        <th colspan="6" class="border2"><b>XI. Referencias Familiares</b></th>
+      </tr>
+      <tr>
+        <td colspan="2" class="bottom left">1. {ref3_nombre}</td>
+        <td colspan="2" class="bottom">Parentesco: {ref3_relacion}</td>
+        <td colspan="2" class="bottom right">
+          Celular: {ref3_telefono_celular}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="bottom left">2. {ref4_nombre}</td>
+        <td colspan="2" class="bottom">Parentesco: {ref4_relacion}</td>
+        <td colspan="2" class="bottom right">
+          Celular: {ref4_telefono_celular}
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b
+            >XII. Identificación del Sujeto Obligado (Supervisado por la
+            Comisión Nacional de Bancos y Seguros -CNBS-)</b
+          >
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          ¿Es sujeto obligado según lo establecido en la normativa vigente en
+          prevención de Lavado de Activos? Si( {siPrevencion} ) No(
+          {noPrevencion} )
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom: none" colspan="6" class="left right">
+          ¿Posee acreditación correspondiente, otorgada por el Ente Regulador?
+          Si( {siAcreditacion} ) No( {noAcreditacion} )
+        </td>
+      </tr>
+      <tr>
+        <td style="border-top: none" colspan="6" class="left right bottom">
+          En caso de ser afirmativa su respuesta, deberá presentar la constancia
+          de Registro de la URMOPRELAFT.
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>XIII. AUTORIZACIÓN</b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Autorizo a SKG para que pueda acceder en el momento que lo estime
+          conveniente, a investigar mis cuentas activas y pasivas en la Central
+          de riesgos de la Comisión Nacional de Bancos y Seguros (CNBS), así
+          como a la base de datos de bancos y datos de cualquier agencia de
+          información de crédito, referencias crediticias y/o en otros agentes
+          económicos, con el objeto de consultar, recabar, y actualizar la
+          información de crédito existente en dicha base o banco de datos.
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b
+            >XIV. Prevención de Lavado de Activos y Financiamiento del
+            Terrorismo. Decreto No. 131-2014 Ley APNDF y su respectivo
+            Reglamento</b
+          >
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="left right">
+          YO: <b>{firmaPrevencion}</b> DECLARO QUE: Los fondos o activos con que
+          cancelaré los productos o servicios prestados por la empresa tienen
+          origen y destinos lícitos; que de ninguna manera están relacionados
+          con los delitos contemplados en la Ley contra el Lavado de Activos,
+          Financiamiento del Terrorismo, Ley para la Regulación de Actividades y
+          Profesiones No Financieras Designadas y demás leyes afines. En caso de
+          ser necesario me comprometo a presentar la documentación que compruebe
+          el origen o destino de los fondos, cuando estos sobrepasen los valores
+          que he declarado o cuando la empresa lo solicite para cumplir con los
+          requerimientos del Ente Regulador y por procedimientos de Debida
+          Diligencia establecidos en la "Política Conozca a su Cliente" y demás
+          leyes vigentes aplicables. La información que he proporcionado a la
+          empresa es fidedigna y es en cumplimiento a lo dispuesto a las leyes
+          vigentes sobre el Lavado de Activos. Así mismo, declaro que el
+          producto o servicio es adquirido con justo título, mediante
+          actividades lícitas y como fruto del trabajo honesto. También declaro
+          que los fondos utilizados para la compra del producto o servicio no
+          son producto y/o no están relacionados con los causales de privación
+          de dominio y la condición de bienes equivalentes, contemplados en la
+          Ley Sobre Privación Definitiva del Dominio de Bienes de Origen Ilícito
+          y demás delitos conexos comprendidos en leyes afines. De la misma
+          forma, autorizo a la empresa a que realice las investigaciones que
+          estime convenientes para verificarlo, comprometiéndome también a
+          actualizar la documentación cuando que me sea requerida por la
+          empresa, comunicando de manera inmediata cualquier cambio en la misma.
+          Adicionalmente autorizo a la empresa para que confirme la veracidad de
+          la información a través de los medios que considere convenientes.
+          Declaro que mi nombre no está incluido en la Oficina de Control de
+          Activos del Exterior (OFAC), o en cualquier otra lista de similar
+          naturaleza o en alguna de carácter nacional y/o internacional en la
+          que se publiquen los datos de las personas a quienes se les haya
+          iniciado proceso judicial o que hayan sido sancionadas y/o condenadas
+          por las autoridades nacionales e internacionales de manera directa o
+          indirecta con actividades ilegales, tales como: Narcotráfico,
+          financiamiento al terrorismo, lavado de activos, tráfico de
+          estupefacientes y todos los demás delitos conexos de conformidad a lo
+          establecido en la Ley Contra el Lavado de Activos, en virtud de todo
+          lo antes expuesto firmo la presente.
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="left right"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="left bottom" style="text-align: center"></td>
+        <td colspan="2" class=""></td>
+        <td colspan="2" class="right bottom" style="text-align: center"></td>
+      </tr>
+{filaFirmas}
+
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="text-align: center">
+          <b>USO EXCLUSIVO DE LA EMPRESA</b>
+        </th>
+      </tr>
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>X. Firma del Asesor de Ventas </b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Declaro haber cumplido con el proceso de Debida Diligencia en el
+          conocimiento del Cliente, conforme al Programa de Cumplimiento, de
+          acuerdo a lo requerido en la
+          <b
+            >Ley para la Regulación de Actividades y Profesiones No Financieras
+            Designadas (APNFD), su respectivo reglamento y demás regulaciones
+            internas.</b
+          >
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="left right"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="left bottom" style="text-align: center"></td>
+        <td colspan="2" class="bottom"></td>
+        <td colspan="2" class="right bottom" style="text-align: center"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="left bottom" style="text-align: center">
+          <b>Nombre del Asesor de Ventas</b>
+        </td>
+        <td colspan="2" class="bottom" style="text-align: center">
+          <b>Firma del Asesor de Ventas</b>
+        </td>
+        <td colspan="2" class="right bottom" style="text-align: center">
+          <b>Lugar y Fecha</b>
+        </td>
+      </tr>
+    </table>
+    <table style="border-collapse: collapse; width: 100%" cellpadding="6">
+      <tr>
+        <th colspan="6" class="border2" style="background-color: #ececec">
+          <b>XV. Firma de Revisado por el Gerente de Ventas </b>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="6" class="border">
+          Declaro haber revisado conforme al proceso de Debida Diligencia en el
+          conocimiento del Cliente, conforme al Programa de Cumplimiento, de
+          acuerdo a lo requerido en la
+          <b
+            >Ley para la Regulación de Actividades y Profesiones No Financieras
+            Designadas (APNFD), su respectivo reglamento y demás regulaciones
+            internas.</b
+          >
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="left right"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="left bottom" style="text-align: center"></td>
+        <td colspan="2" class="bottom"></td>
+        <td colspan="2" class="right bottom" style="text-align: center"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="left bottom" style="text-align: center">
+          <b>Nombre del Gerente de Ventas</b>
+        </td>
+        <td colspan="2" class="bottom" style="text-align: center">
+          <b>Firma del Gerente de Ventas</b>
+        </td>
+        <td colspan="2" class="right bottom" style="text-align: center">
+          <b>Lugar y Fecha</b>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

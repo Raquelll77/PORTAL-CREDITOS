@@ -1,0 +1,18 @@
+[
+    {
+        "value": "ASALARIADO",
+        "label": "ASALARIADO"
+    },
+    {
+        "value": "INDEPENDIENTE",
+        "label": "PROFESIONAL INDEPENDIENTE"
+    },
+    {
+        "value": "COMERCIANTE/NEGOCIO PROPIO",
+        "label": "COMERCIANTE/NEGOCIO PROPIO"
+    },
+    {
+        "value": "OTRO",
+        "label": "OTRO"
+    }
+]

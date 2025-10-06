@@ -1,0 +1,50 @@
+[
+    {
+        "value": "SALARIO",
+        "label": "SALARIO"
+    },
+    {
+        "value": "JUBILACION O PENSION",
+        "label": "JUBILACION O PENSIÓN"
+    },
+    {
+        "value": "VENTAS BIENES MUEBLES/INMUEBLES",
+        "label": "VENTAS BIENES MUEBLES/INMUEBLES"
+    },
+    {
+        "value": "REMESAS",
+        "label": "REMESAS"
+    },
+    {
+        "value": "ALQUILERES",
+        "label": "ALQUILERES"
+    },
+    {
+        "value": "NEGOCIO PROPIO",
+        "label": "NEGOCIO PROPIO"
+    },
+    {
+        "value": "AHORROS",
+        "label": "AHORROS"
+    },
+    {
+        "value": "HERENCIA",
+        "label": "HERENCIA"
+    },
+    {
+        "value": "PREMIOS DE LOTERIA",
+        "label": "PREMIOS DE LOTERÍA"
+    },
+    {
+        "value": "PRESTAMO INTERNO",
+        "label": "PRÉSTAMO INTERNO"
+    },
+    {
+        "value": "PRESTAMO EXTERNO",
+        "label": "PRÉSTAMO EXTERNO"
+    },
+    {
+        "value": "OTROS",
+        "label": "OTROS"
+    }
+]

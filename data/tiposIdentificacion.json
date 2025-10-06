@@ -1,0 +1,18 @@
+[
+    {
+        "value": "DNI",
+        "label": "DNI"
+    },
+    {
+        "value": "ID Vieja",
+        "label": "ID Vieja"
+    },
+    {
+        "value": "Carne de Residente",
+        "label": "Carné de Residente"
+    },
+    {
+        "value": "Licencia de Conducir Vigente",
+        "label": "Licencia de Conducir Vigente"
+    }
+]

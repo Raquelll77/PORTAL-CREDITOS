@@ -1,0 +1,9 @@
+tarea programada:
+sincronizar_tablas.php
+
+
+Al crear un usuario:
+
+Al definir un cliente y dejar en blanco el almacen, este tendra acceso a todos los almacenes de un cliente (Superusuario distribuidor)
+Al definir un cliente y definir el almacen, este tendra acceso unicamente a la bodega asignada (Jefe de tienda)
+-para crear usuarios con acceso a diferentes clientes y/o bodegas se debe hacer a trafes de perfiles de usuario asignando los clientes y bodegas a los cuales tendra acceso.

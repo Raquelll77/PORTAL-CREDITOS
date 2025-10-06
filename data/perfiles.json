@@ -1,0 +1,64 @@
+[
+    {
+        "id": "per_normal",
+        "value": "3.98",
+        "label": "Perfil Prima Normal"
+    },
+    {
+        "id": "per_informal",
+        "value": "4",
+        "label": "Perfil Informal"
+    },
+    {
+        "id": "per_ktm",
+        "value": "3.75",
+        "label": "Perfil KTM"
+    },
+    {
+        "id": "per_mototaxi",
+        "value": "4",
+        "label": "Perfil Mototaxi"
+    },
+    {
+        "id": "per_planilla",
+        "value": "3",
+        "label": "Convenio deduccion Leyde"
+    },
+	{
+        "id": "per_splanilla",
+        "value": "3.67",
+        "label": "Convenio sin deduccion Planilla"
+    },
+    {
+        "id": "per_usados",
+        "value": "4",
+        "label": "Perfil Usados"
+    },
+	{
+        "id": "per_vehico",
+        "value": "2.5",
+        "label": "Perfil Vehico"
+    },
+	{
+        "id": "per_vehico_pre",
+        "value": "1.54",
+        "label": "Perfil Vehico Preferencial"
+    },
+	
+	{
+        "id": "per_empresas",
+        "value": "3.33",
+        "label": "Convenio Empresas"
+    },
+	{
+        "id": "per_empleados",
+        "value": "2.25",
+        "label": "Credito Empleados"
+    }
+	,
+	{
+        "id": "per_cfarmaciaahorro",
+        "value": "3.58",
+        "label": "Convenio Farmacias el Ahorro"
+    }
+]

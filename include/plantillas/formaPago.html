@@ -1,0 +1,250 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: larger;
+  }
+
+  .solicitud-credito {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .header {
+    /* text-align: center; */
+    padding: 20px;
+    font-size: 32px;
+    border-bottom: 1px solid #000;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .titulo {
+    font-weight: bold;
+  }
+
+  .top {
+    border-top: 1px solid #000;
+  }
+
+  .bottom {
+    border-bottom: 1px solid black;
+  }
+
+  .left {
+    border-left: 1px solid black;
+  }
+
+  .right {
+    border-right: 1px solid black;
+  }
+
+  .border {
+    border: 1px solid black;
+  }
+
+  .border2 {
+    border: 1.5px solid black;
+  }
+
+  .text-right {
+    text-align: right !important;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+</style>
+
+<img src="img/logo-SKG.png" alt="" srcset="" />
+
+<div>
+  <table>
+    <tr>
+      <td width="20%"><b>CLIENTE</b></td>
+      <td width="60%">{{nombre_cliente}}</td>
+      <td><b>Realice sus Pagos en:</b></td>
+    </tr>
+    <tr>
+      <td width="20%"><b>CODIGO</b></td>
+      <td width="60%">{{codigo_cliente}}</td>
+      <td>Pago en Cajas de Movesa</td>
+    </tr>
+    <tr>
+      <td width="20%"><b>REFERENCIA</b></td>
+      <td width="60%">{{dni_cliente}}</td>
+      <td>Pago en Bancos</td>
+    </tr>
+  </table>
+
+  <br /><br /><br />
+  <hr />
+
+  <table style="font-size: 50px">
+    <tr>
+      <td colspan="4"></td>
+    </tr>
+    <tr>
+      <!-- <td width="5%"></td> -->
+      <td width="50%"><b>Monto Del Prestamo</b></td>
+      <td width="50%" class="text-right">L. {{total_prestamo}}</td>
+      <!-- <td width="5%"></td> -->
+    </tr>
+    <tr>
+      <!-- <td width="5%"></td> -->
+      <td width="50%"><b>Plazo</b></td>
+      <td width="50%" class="text-right">{{plazo}} Cuotas</td>
+      <!-- <td width="5%"></td> -->
+    </tr>
+    <tr>
+      <!-- <td width="5%"></td> -->
+      <td width="40%"><b>Total Cuota Mensual</b></td>
+      <td width="60%" class="text-right">L. {{cuota_mensual}} (Comprende Capital e interes.)</td>
+      <!-- <td width="5%"></td> -->
+    </tr>
+    <tr>
+      <!-- <td width="5%"></td> -->
+      <td width="50%"><b>Fecha de Pago</b></td>
+      <td width="50%" class="text-right">{{dia_pago}} de cada Mes</td>
+      <!-- <td width="5%"></td> -->
+    </tr>
+  </table>
+
+  <br /><br /><br /><br />
+
+  <table style="font-size: 50px">
+    <tr>
+      <td width="5%"></td>
+      <td width="90%" class="text-center">
+        <b>Iniciando su Primer Pago el:</b> {{fecha_primera_cuota}}
+      </td>
+      <td width="5%"></td>
+    </tr>
+  </table>
+
+  <br />
+  <hr />
+  <h2 style="text-align: center; font-size: 50px;">Formas de Pago</h2>
+  <br>
+
+    <table style="font-size: 50px">
+  <tr>
+    <td><b>TIGO MONEY</b> </td>
+  </tr>
+  <tr>
+    <td>Pasos:</td>
+  </tr>
+  <tr>
+    <td>1. Producto: Pago servicio</td>
+  </tr>
+  <tr>
+    <td>2. Empresa: SKG</td>
+  </tr>
+  <tr>
+    <td>3. Luego le solicitará su # de DNI o del cliente que tiene el crédito</td>
+  </tr>
+  <tr>
+    <td>4. Monto a depositar</td>
+  </tr>
+</table>
+
+
+    <br />
+    <br />
+
+    <table style="font-size: 50px">
+      <tr>
+        <td>SKG S.A de C.V</td>
+      </tr>
+      <tr>
+        <td><b>BANCO ATLANTIDA 20111018444</b></td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <table style="font-size: 50px">
+      <tr>
+        <td>SKG S.A de C.V</td>
+      </tr>
+      <tr>
+        <td><b>BANCO FICOHSA 200020057668</b></td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <table style="font-size: 50px">
+      <tr>
+        <td>SKG S.A de C.V</td>
+      </tr>
+      <tr>
+        <td><b>BANCO OCCIDENTE</b></td>
+      </tr>
+      <tr>
+        <td>Cobranza Electrónica de SKG empresa #434</td>
+      </tr>
+      <tr>
+        <td>Presentar su número de identidad.</td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+    <br />
+<table style="font-size: 50px; text-align: center; border-collapse: collapse; width: 100%" border="1">
+  <tr>
+    <td style="padding: 20px; border: 2px solid black;">Telecobros: 3175-5103</td>
+    <td style="padding: 20px; border: 2px solid black;">Telecobros: 3292-9647</td>
+    <td style="padding: 20px; border: 2px solid black;">Telecobros: 3144-0901</td> 
+  </tr>
+  <tr>
+    <td colspan="3" style="padding: 30px; border: 2px solid black; font-weight: bold;">
+      Notificar pago cuando es en Banco para poder aplicarlo a su cuenta
+    </td>
+  </tr>
+</table>
+
+
+    <br />
+    <br />
+    <br />
+
+    <table style="font-size: 35px; text-align: center">
+      <tr class="text-center">
+        <td>
+          <i
+            >Mi Dios, pues, suplirá todo lo que os falta conforme a sus riquezas
+            en gloria en Cristo Jesús.</i
+          >
+        </td>
+      </tr>
+      <tr class="text-center">
+        <td>Filipenses. 4:19</td>
+      </tr>
+    </table>
+  </div>
+  <!-- <table>
+    <tr>
+        <td width="20%">CLIENTE</td>
+        <td colspan="2" width="80%">DIDIER ISAAC BONILLA CHAVEZ</td>
+    </tr>
+    <tr>
+        <td width="20%">CODIGO</td>
+        <td width="70%">SK999999</td>
+        <td width="10%">Pago en Cajas de Movesa</td>
+    </tr>
+    <tr>
+        <td width="20%">REFERENCIA</td>
+        <td width="70%">0501200313138</td>
+        <td width="10%">Pago en Bancos</td>
+    </tr>
+</table> -->
+</div>
