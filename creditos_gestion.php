@@ -208,6 +208,7 @@ if ($accion == Modulos::MODULO_DATOS_SOLICITUD) //TODO Datos Generales
 			$sqlcampos .= " , monto_prima =" . GetSQLValue($conn->real_escape_string($_REQUEST["monto_prima"]), "text");
 			$sqlcampos .= " , gastos_administrativos =" . GetSQLValue($conn->real_escape_string($_REQUEST["gastos_administrativos"]), "text");
 			$sqlcampos .= " , costo_rtn = " . GetSQLValue($conn->real_escape_string($_REQUEST["costo_rtn"]), "text");
+			$sqlcampos .= " , aplica_promocion_octubre = " . GetSQLValue($conn->real_escape_string($_REQUEST["aplica_promocion_octubre"]), "int");
 			$sqlcampos .= " , moto_marca =" . GetSQLValue($conn->real_escape_string($_REQUEST["moto_marca"]), "text");
 			$sqlcampos .= " , moto_modelo =" . GetSQLValue($conn->real_escape_string($_REQUEST["moto_modelo"]), "text");
 			$sqlcampos .= " , monto_financiar =" . GetSQLValue($conn->real_escape_string($_REQUEST["monto_financiar"]), "text");
@@ -275,6 +276,7 @@ if ($accion == Modulos::MODULO_DATOS_SOLICITUD) //TODO Datos Generales
 			,uso_unidad
 			,gastos_administrativos
 			,costo_rtn
+			,aplica_promocion_octubre
 			,moto_modelo
 			,moto_marca
 		FROM prestamo
@@ -398,6 +400,22 @@ if ($accion == Modulos::MODULO_DATOS_SOLICITUD) //TODO Datos Generales
 
 
 		echo campo("estatus", "Estatus", 'select', valores_combobox_db('prestamo_estatus', $row["estatus"], 'nombre', '', 'nombre'), 'class="form-control" ', '', '', 3, 4);
+
+		echo campo(
+			"aplica_promocion_octubre",
+			"¿Aplica Promoción Octubre?",
+			'select',
+			valores_combobox_texto(
+				'<option value="0">No</option><option value="1">Sí</option>',
+				$row["aplica_promocion_octubre"]
+			),
+			'class="form-control" onchange="togglePromoOctubre(this.value)"',
+			'',
+			'',
+			3,
+			3
+		);
+
 		echo campo("etapa_proceso", "Etapa Proceso", 'select', valores_combobox_db('prestamo_etapa', $row["etapa_proceso"], 'nombre', '', 'nombre'), 'class="form-control" ', '', '', 3, 8);
 
 

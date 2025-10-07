@@ -51,7 +51,8 @@ if ($accion === 'chkdup') {
     ";
     if ($rs = $conn->query($sql)) {
       $out['found'] = $rs->num_rows;
-      while ($r = $rs->fetch_assoc()) $out['items'][] = $r;
+      while ($r = $rs->fetch_assoc())
+        $out['items'][] = $r;
     }
   }
   header('Content-Type: application/json; charset=utf-8');
@@ -396,7 +397,7 @@ if ($accion == "1") {
   }
 
   if ($buscar <> "") {
-    $sql .=  "  and ( nombres LIKE '%$buscar%' )";
+    $sql .= "  and ( nombres LIKE '%$buscar%' )";
   }
 
   $sql .= " ORDER BY prestamo.tipoprima DESC, prestamo.id ASC";
@@ -592,7 +593,7 @@ if ($accion == "2" or $accion == "25") {
 
 
   if ($buscar <> "") {
-    $sql .=  "  and ( nombres LIKE '%$buscar%' )";
+    $sql .= "  and ( nombres LIKE '%$buscar%' )";
   }
   $sql .= " ORDER BY prestamo.tipoprima DESC, prestamo.id ASC";
 
@@ -750,38 +751,38 @@ if ($accion == "2" or $accion == "25") {
 
 // TODO NUEVA Solicitud
 if ($accion == "3") {
-	$API_key = "@B1F5E814-4";
-    $dni = "0703198600808";
-    $url = "http://web.grupomovesa.com/portal/modulo_creditos/services/portalCreditosAPI.services.php";
-    $url .= "?request=verificar_resolucion_scoring&dni={$dni}&token={$API_key}";
-    $response = file_get_contents($url);
-	//echo "Debug: Response from API: " . $response;
-	
-//	$echo $_SESSION['usuario'];
+  $API_key = "@B1F5E814-4";
+  $dni = "0703198600808";
+  $url = "http://web.grupomovesa.com/portal/modulo_creditos/services/portalCreditosAPI.services.php";
+  $url .= "?request=verificar_resolucion_scoring&dni={$dni}&token={$API_key}";
+  $response = file_get_contents($url);
+  //echo "Debug: Response from API: " . $response;
 
-// session_start();
+  //	$echo $_SESSION['usuario'];
 
-// echo "Usuario: " . $_SESSION['usuario'] . "<br>";
+  // session_start();
+
+  // echo "Usuario: " . $_SESSION['usuario'] . "<br>";
 // echo "Nombre: " . $_SESSION['usuario_nombre'];
-	
-//	$nombreUsuario = $_SESSION['usuario_nombre'] ?? 'Usuario no definido';
+
+  //	$nombreUsuario = $_SESSION['usuario_nombre'] ?? 'Usuario no definido';
 //	echo $nombreUsuario;
 
-    
+
 
   if (isset($_REQUEST['s'])) { // crear Solicitud nueva
     //########## validar datos
     // echo var_dump($_REQUEST["tipo_prima"]);
     $verror = "";
-    $verror .= validar("Tienda", $_REQUEST['bodega'], "text", true,  null,  1,  null);
-    $verror .= validar("Nombres", $_REQUEST['nombres'], "text", true,  null,  3,  null);
-    $verror .= validar("Apellidos", $_REQUEST['apellidos'], "text", true,  null,  3,  null);
-    $verror .= validar("Identidad", $_REQUEST['identidad'], "text", true,  null,  13,  null);
+    $verror .= validar("Tienda", $_REQUEST['bodega'], "text", true, null, 1, null);
+    $verror .= validar("Nombres", $_REQUEST['nombres'], "text", true, null, 3, null);
+    $verror .= validar("Apellidos", $_REQUEST['apellidos'], "text", true, null, 3, null);
+    $verror .= validar("Identidad", $_REQUEST['identidad'], "text", true, null, 13, null);
 
-    $verror .= validar("Valor Motocicleta", $_REQUEST['monto_prestamo'], "text", true,  null,  3,  null);
+    $verror .= validar("Valor Motocicleta", $_REQUEST['monto_prestamo'], "text", true, null, 3, null);
     //   $verror.=validar("Prima",$_REQUEST['monto_prima'], "text", true,  null,  1,  null);
-    $verror .= validar("Total Financiar", $_REQUEST['monto_financiar'], "text", true,  null,  3,  null);
-    $verror .= validar("Plazo", $_REQUEST['plazo'], "text", true,  null,  1,  null);
+    $verror .= validar("Total Financiar", $_REQUEST['monto_financiar'], "text", true, null, 3, null);
+    $verror .= validar("Plazo", $_REQUEST['plazo'], "text", true, null, 1, null);
     //   $verror.=validar("Tasa",$_REQUEST['tasa'], "text", true,  null,  2,  null);
 
     if ($_REQUEST["tipo_persona"] == "Persona Juridica" and $_REQUEST["nombre_empresa"] == "") {
@@ -802,9 +803,9 @@ if ($accion == "3") {
       $sqlcampos .= " , monto_seguro =" . GetSQLValue($conn->real_escape_string($_REQUEST["monto_seguro"]), "text");
       $sqlcampos .= " , monto_prestamo =" . GetSQLValue($conn->real_escape_string($_REQUEST["monto_prestamo"]), "text");
       $sqlcampos .= " , monto_prima =" . GetSQLValue($conn->real_escape_string($_REQUEST["monto_prima"]), "text");
-	  $sqlcampos .= " , gastos_administrativos =" . GetSQLValue($conn->real_escape_string($_REQUEST["gastos_administrativos"]), "text");
+      $sqlcampos .= " , gastos_administrativos =" . GetSQLValue($conn->real_escape_string($_REQUEST["gastos_administrativos"]), "text");
       $sqlcampos .= " , monto_financiar =" . GetSQLValue($conn->real_escape_string($_REQUEST["monto_financiar"]), "text");
-	  $sqlcampos .= " , costo_rtn = " . GetSQLValue($conn->real_escape_string($_REQUEST["costo_rtn"]), "text");
+      $sqlcampos .= " , costo_rtn = " . GetSQLValue($conn->real_escape_string($_REQUEST["costo_rtn"]), "text");
       $sqlcampos .= " , plazo =" . GetSQLValue($conn->real_escape_string($_REQUEST["plazo"]), "text");
       $sqlcampos .= " , cliente_nuevo_recompra =" . GetSQLValue($conn->real_escape_string($_REQUEST["cliente_nuevo_recompra"]), "text");
       $sqlcampos .= " , tipo_identificacion =" . GetSQLValue($conn->real_escape_string($_REQUEST["tipo_identificacion"]), "text");
@@ -820,6 +821,9 @@ if ($accion == "3") {
       $sqlcampos .= " , moto_marca =" . GetSQLValue($conn->real_escape_string($_REQUEST["moto_marca"]), "text");
       $sqlcampos .= " , cantidad_vehiculos =" . GetSQLValue($conn->real_escape_string($_REQUEST["cantidad_vehiculos"]), "text");
 
+      $sqlcampos .= " , aplica_promocion_octubre = " . GetSQLValue($conn->real_escape_string($_REQUEST["aplica_promocion_octubre"]), "int");
+
+
       switch ($_REQUEST["tipo_prima"]) {
         case 1:
           $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=1'), "text");
@@ -834,19 +838,19 @@ if ($accion == "3") {
           // $sqlcampos .= " , cierre_interes_mensual =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=6'), "text");
           break;
         case 3:
-           $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=3'), "text");
-		   
-		   $sqlcampos .= ", cierre_interes_mensual = 0";
-        //   $sqlcampos .= " , cierre_interes_mensual =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=3'), "text");
-        //   break;
-        // case 4:
-        //   $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=4'), "text");
-        //   $sqlcampos .= " , cierre_interes_mensual =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=8'), "text");
+          $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=3'), "text");
+
+          $sqlcampos .= ", cierre_interes_mensual = 0";
+          //   $sqlcampos .= " , cierre_interes_mensual =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=3'), "text");
+          //   break;
+          // case 4:
+          //   $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=4'), "text");
+          //   $sqlcampos .= " , cierre_interes_mensual =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=8'), "text");
           break;
-		case 4:
-           $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=4'), "text");
-		   $sqlcampos .= ", cierre_interes_mensual = 0";
-		   break;
+        case 4:
+          $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=4'), "text");
+          $sqlcampos .= ", cierre_interes_mensual = 0";
+          break;
         default:
           $sqlcampos .= " , tasa =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=1'), "text");
           $sqlcampos .= " , cierre_interes_mensual =" . GetSQLValue(get_dato_sql('opciones', 'valor', ' where id=5'), "text");
@@ -856,9 +860,10 @@ if ($accion == "3") {
       $sqlcampos .= " , estatus =1";
       $sqlcampos .= " , etapa_proceso =1";
       $sqlcampos .= " , tipoprima = " . $_REQUEST["tipo_prima"];
-	  $sqlcampos .= " , nombre_vendedor = '" . $_SESSION['usuario_nombre']."'"; //agregado
-	  // $sqlcampos .= " , nombre_vendedor = '{$_SESSION['usuario_nombre']}' "; concatenar mejor de esta manera
+      $sqlcampos .= " , nombre_vendedor = '" . $_SESSION['usuario_nombre'] . "'"; //agregado
+      // $sqlcampos .= " , nombre_vendedor = '{$_SESSION['usuario_nombre']}' "; concatenar mejor de esta manera
       $sqlcampos .= ",usuario_alta= '" . $_SESSION['usuario'] . "' ,fecha_alta=now()";
+
 
       if (tiene_permiso(26)) {
         $sqlcampos .= " , canal='CI'";
@@ -875,7 +880,7 @@ if ($accion == "3") {
 
 
       $sql = "insert into prestamo set" . $sqlcampos;
-      
+
 
       if ($conn->query($sql) === TRUE) {
         $insert_id = mysqli_insert_id($conn);
@@ -884,7 +889,7 @@ if ($accion == "3") {
         $stud_arr[0]["pcode"] = 1;
         $stud_arr[0]["pmsg"] = 'Los datos fueron guardados satisfactoriamente. El numero de Solicitud es: <strong>' . $numero_sol . '</strong>';
         $stud_arr[0]["pcodid"] = $insert_id;
-      } else { 
+      } else {
         $stud_arr[0]["pcode"] = 0;
         $stud_arr[0]["pmsg"] = 'Se produjo un error al guardar el registro DB101:<br>' . $conn->error;
         $stud_arr[0]["pcodid"] = 0;
@@ -968,13 +973,13 @@ if ($accion == "3") {
   <option value="Carne de Residente">Carné de Residente</option>
   <option value="Licencia de Conducir Vigente">Licencia de Conducir Vigente</option>', ''), 'class="form-control" "', '', '', 3, 5);
   echo campo("identidad", "Identidad", 'text', '', 'class="form-control" data-mask="9999-9999-99999?99" ', '', '', 3, 3);
-echo '<div id="identidad-alert" class="alert alert-warning" role="alert" style="display:none;margin-top:6px;"></div>';
+  echo '<div id="identidad-alert" class="alert alert-warning" role="alert" style="display:none;margin-top:6px;"></div>';
 
   echo campo("rtn", "No. RTN", 'text', '', 'class="form-control" data-mask="9999-9999-99999?99" ', '', '', 3, 3);
   echo campo("codigo_cliente", "Codigo de Cliente", 'text', '', 'class="form-control" ', '', '', 3, 3);
   echo campo("clave_enee", "Clave Primaria Empresa de Energía Eléctrica", 'text', '', 'class="form-control" ', '', '', 3, 3);
   echo "<hr>";
-  
+
   // Productos y/o servicios solicitados
   echo campo("producto_servicio", "Productos y/o servicios solicitados", 'select', valores_combobox_texto('
   <option value="Vehiculo Nuevo">Vehículo Nuevo</option>
@@ -998,7 +1003,7 @@ echo '<div id="identidad-alert" class="alert alert-warning" role="alert" style="
 
   echo campo("cantidad_vehiculos", "Cantidad de Vehiculos", 'number', '', 'class="form-control"', '', '', 3, 3);
 
-echo campo("monto_prestamo", "Valor Motocicleta", 'text', '', 'class="form-control" onchange="$(\'#monto_financiar\').val(
+  echo campo("monto_prestamo", "Valor Motocicleta", 'text', '', 'class="form-control" onchange="$(\'#monto_financiar\').val(
     convertir_num($(\'#monto_prestamo\').val()) +
     convertir_num($(\'#monto_seguro\').val()) +
     convertir_num($(\'#gastos_administrativos\').val()) +
@@ -1006,7 +1011,7 @@ echo campo("monto_prestamo", "Valor Motocicleta", 'text', '', 'class="form-contr
     convertir_num($(\'#monto_prima\').val())
 );"', '', '', 3, 3);
 
-echo campo("monto_seguro", "Valor del Seguro", 'text', '', 'class="form-control" onchange="$(\'#monto_financiar\').val(
+  echo campo("monto_seguro", "Valor del Seguro", 'text', '', 'class="form-control" onchange="$(\'#monto_financiar\').val(
     convertir_num($(\'#monto_prestamo\').val()) +
     convertir_num($(\'#monto_seguro\').val()) +
     convertir_num($(\'#gastos_administrativos\').val()) +
@@ -1014,7 +1019,7 @@ echo campo("monto_seguro", "Valor del Seguro", 'text', '', 'class="form-control"
     convertir_num($(\'#monto_prima\').val())
 );"', '', '', 3, 3);
 
-echo campo("monto_prima", "Prima", 'text', '', 'class="form-control" onchange="$(\'#monto_financiar\').val(
+  echo campo("monto_prima", "Prima", 'text', '', 'class="form-control" onchange="$(\'#monto_financiar\').val(
     convertir_num($(\'#monto_prestamo\').val()) +
     convertir_num($(\'#monto_seguro\').val()) +
     convertir_num($(\'#gastos_administrativos\').val()) +
@@ -1022,9 +1027,9 @@ echo campo("monto_prima", "Prima", 'text', '', 'class="form-control" onchange="$
     convertir_num($(\'#monto_prima\').val())
 );"', '', '', 3, 3);
 
-$gastos = isset($row["gastos_administrativos"]) ? $row["gastos_administrativos"] : 0;
+  $gastos = isset($row["gastos_administrativos"]) ? $row["gastos_administrativos"] : 0;
 
-if (strpos($_SESSION['usuario'], 'Cd') !== false && strpos($_SESSION['usuario'], 'Cd31') === false) {
+  if (strpos($_SESSION['usuario'], 'Cd') !== false && strpos($_SESSION['usuario'], 'Cd31') === false) {
     // Usuario contiene 'Cd' PERO NO es 'Cd31' → ocultar
     echo campo("gastos_administrativos", "Gastos Administrativos", 'text', $gastos, 'class="form-control" onchange="$(\'#monto_financiar\').val(
         convertir_num($(\'#monto_prestamo\').val()) +
@@ -1033,7 +1038,7 @@ if (strpos($_SESSION['usuario'], 'Cd') !== false && strpos($_SESSION['usuario'],
         convertir_num($(\'#costo_rtn\').val()) -
         convertir_num($(\'#monto_prima\').val())
     );"', '', '', 3, 3, 'style="display:none;"');
-} else {
+  } else {
     // Usuarios que no contienen 'Cd' o son 'Cd31' → mostrar
     echo campo("gastos_administrativos", "Gastos Administrativos", 'text', $gastos, 'class="form-control" onchange="$(\'#monto_financiar\').val(
         convertir_num($(\'#monto_prestamo\').val()) +
@@ -1042,12 +1047,12 @@ if (strpos($_SESSION['usuario'], 'Cd') !== false && strpos($_SESSION['usuario'],
         convertir_num($(\'#costo_rtn\').val()) -
         convertir_num($(\'#monto_prima\').val())
     );"', '', '', 3, 3);
-}
+  }
 
 
-		
+
   // NUEVO CAMPO: Costo RTN
-echo campo("costo_rtn", "Costo RTN", 'text', '', 'class="form-control" onchange="
+  echo campo("costo_rtn", "Costo RTN", 'text', '', 'class="form-control" onchange="
     $(\'#monto_financiar\').val(
         convertir_num($(\'#monto_prestamo\').val()) +
         convertir_num($(\'#monto_seguro\').val()) +
@@ -1062,19 +1067,33 @@ echo campo("costo_rtn", "Costo RTN", 'text', '', 'class="form-control" onchange=
   echo campo("plazo", "Plazo", 'select', $option_values, 'class="form-control" ', '', '', 3, 2);
   //  echo campo("tasa","Tasa",'text','10','class="form-control" data-mask="9?9"','','',3,2);
   echo campo("tasa", '', 'hidden', '', '', '', '');
+  echo campo(
+    "aplica_promocion_octubre",
+    "¿Aplica promoción de octubre?",
+    'select',
+    valores_combobox_texto('<option value="0">No</option><option value="1">Sí</option>', ''),
+    'class="form-control"',
+    '',
+    '',
+    3,
+    5
+  );
 
 
 
-?> <br>
+  ?> <br>
   <div id="botones">
-    <a id="btnguardar" href="#" class="btn btn-primary" onclick="procesarforma() ; return false;"><span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> Guardar</a>
-    <a id="btnimprimir" href="#" style="display: none;" class="btn btn-info" onclick="actualizarbox('pagina','creditos_gestion.php?a=1&cid='+$('#ridg').val()) ;  return false;">Continuar</a>
+    <a id="btnguardar" href="#" class="btn btn-primary" onclick="procesarforma() ; return false;"><span
+        class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> Guardar</a>
+    <a id="btnimprimir" href="#" style="display: none;" class="btn btn-info"
+      onclick="actualizarbox('pagina','creditos_gestion.php?a=1&cid='+$('#ridg').val()) ;  return false;">Continuar</a>
 
     <input id="ridg" name="" ridg type="hidden" value="" />
 
     <img id="cargando" style="display: none;" src="images/load.gif" />
 
-    &nbsp;&nbsp;&nbsp;<a id="btnregresar" href="#" onclick="actualizarbox('pagina','creditos.php') ; return false;" class="btn btn-default">REGRESAR</a>
+    &nbsp;&nbsp;&nbsp;<a id="btnregresar" href="#" onclick="actualizarbox('pagina','creditos.php') ; return false;"
+      class="btn btn-default">REGRESAR</a>
     <div class="row">
       <br>
       <div id="salida"> </div>
@@ -1093,7 +1112,7 @@ echo campo("costo_rtn", "Costo RTN", 'text', '', 'class="form-control" onchange=
 
 
       var url = "creditos.php?a=3&s=1";
-      $.getJSON(url, $("#solform").serialize(), function(json) {
+      $.getJSON(url, $("#solform").serialize(), function (json) {
 
         i = 1;
         if (json.length > 0) {
@@ -1119,56 +1138,56 @@ echo campo("costo_rtn", "Costo RTN", 'text', '', 'class="form-control" onchange=
           $('#salida').empty().append('<div class="alert alert-danger" role="alert">Se produjo un error en comunicacion JSON:101</div>');
         }
 
-      }).error(function() {
+      }).error(function () {
         $('#salida').empty().append('<div class="alert alert-danger" role="alert">Se produjo un error en comunicacion JSON:102</div>');
-      }).complete(function() {
+      }).complete(function () {
 
         $('#cargando').hide();
         $("#solform :input").attr('readonly', false);
         $("#botones *").removeAttr("disabled");
       });
     }
-	
-	(function () {
-  function pintarAlerta(res) {
-    var $input = $('#identidad');
-    var $grp   = $input.closest('.form-group');
-    var $alrt  = $('#identidad-alert');
 
-    if (res && res.found > 0) {
-      var lista = res.items.map(function (x) {
-        return '<li>#' + x.numero + ' · ' + x.bodega_nombre + ' · ' + x.estatus + ' · ' + x.fecha + '</li>';
-      }).join('');
-      $alrt.html('<strong>Atención:</strong> ya existe ' + res.found + ' solicitud(es) este año.<ul style="margin:6px 0 0 18px;">' + lista + '</ul>').show();
-      $grp.addClass('has-warning');
-    } else {
-      $alrt.hide().empty();
-      $grp.removeClass('has-warning');
-    }
-  }
+    (function () {
+      function pintarAlerta(res) {
+        var $input = $('#identidad');
+        var $grp = $input.closest('.form-group');
+        var $alrt = $('#identidad-alert');
 
-  var t;
-  function chequear() {
-    var raw = ($('#identidad').val() || '').replace(/\D/g,'');
-    if (raw.length < 13) { pintarAlerta(null); return; }
-    $.getJSON('creditos.php?a=chkdup&identidad=' + encodeURIComponent(raw))
-      .done(pintarAlerta)
-      .fail(function(){ pintarAlerta(null); });
-  }
+        if (res && res.found > 0) {
+          var lista = res.items.map(function (x) {
+            return '<li>#' + x.numero + ' · ' + x.bodega_nombre + ' · ' + x.estatus + ' · ' + x.fecha + '</li>';
+          }).join('');
+          $alrt.html('<strong>Atención:</strong> ya existe ' + res.found + ' solicitud(es) este año.<ul style="margin:6px 0 0 18px;">' + lista + '</ul>').show();
+          $grp.addClass('has-warning');
+        } else {
+          $alrt.hide().empty();
+          $grp.removeClass('has-warning');
+        }
+      }
 
-  // Dispara en tecleo (con debounce), blur y change
-  $(document).on('keyup blur change', '#identidad', function(e){
-    if (e.type === 'keyup') { clearTimeout(t); t = setTimeout(chequear, 400); }
-    else { chequear(); }
-  });
+      var t;
+      function chequear() {
+        var raw = ($('#identidad').val() || '').replace(/\D/g, '');
+        if (raw.length < 13) { pintarAlerta(null); return; }
+        $.getJSON('creditos.php?a=chkdup&identidad=' + encodeURIComponent(raw))
+          .done(pintarAlerta)
+          .fail(function () { pintarAlerta(null); });
+      }
 
-  // Por si viene precargado
-  setTimeout(chequear, 0);
-})();
-	
+      // Dispara en tecleo (con debounce), blur y change
+      $(document).on('keyup blur change', '#identidad', function (e) {
+        if (e.type === 'keyup') { clearTimeout(t); t = setTimeout(chequear, 400); }
+        else { chequear(); }
+      });
+
+      // Por si viene precargado
+      setTimeout(chequear, 0);
+    })();
+
   </script>
 
-<?php
+  <?php
 
 
   echo " </form></div></div></div></div>";
@@ -1195,7 +1214,7 @@ if ($accion == "4") {
 
 
   if ($buscar <> "") {
-    $sql .=  "  and ( nombres LIKE '%$buscar%' )";
+    $sql .= "  and ( nombres LIKE '%$buscar%' )";
   }
 
   // ****** Fin SQL ********************************************************************************
@@ -1300,10 +1319,10 @@ if ($accion == "42") {
   if (isset($_REQUEST['s'])) { // crear  nueva
     //########## validar datos
     $verror = "";
-    $verror .= validar("Nombres", $_REQUEST['nombres'], "text", true,  null,  3,  null);
-    $verror .= validar("Apellidos", $_REQUEST['apellidos'], "text", true,  null,  3,  null);
+    $verror .= validar("Nombres", $_REQUEST['nombres'], "text", true, null, 3, null);
+    $verror .= validar("Apellidos", $_REQUEST['apellidos'], "text", true, null, 3, null);
     // $verror.=validar("Identidad",$_REQUEST['identidad'], "text", true,  null,  13,  null);
-    $verror .= validar("Documento Buro", $_REQUEST['doc1'], "text", true,  null,  4,  null);
+    $verror .= validar("Documento Buro", $_REQUEST['doc1'], "text", true, null, 4, null);
 
     if ($_REQUEST['identidad'] == '' and $_REQUEST['rtn'] == '') {
       $verror .= 'Debe ingresar Identidad o RTN';
@@ -1375,15 +1394,17 @@ if ($accion == "42") {
 
 
 
-?>
+  ?>
   <br>
   <div id="botones">
-    <a id="btnguardar" href="#" class="btn btn-primary" onclick="procesarforma() ; return false;"><span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> Guardar</a>
+    <a id="btnguardar" href="#" class="btn btn-primary" onclick="procesarforma() ; return false;"><span
+        class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> Guardar</a>
 
     <input id="ridg" name="" ridg type="hidden" value="" />
 
     <img id="cargando" style="display: none;" src="images/load.gif" />
-    &nbsp;&nbsp;&nbsp;<a id="btnregresar" href="#" onclick="actualizarbox('pagina','creditos.php?a=4') ; return false;" class="btn btn-default">REGRESAR</a>
+    &nbsp;&nbsp;&nbsp;<a id="btnregresar" href="#" onclick="actualizarbox('pagina','creditos.php?a=4') ; return false;"
+      class="btn btn-default">REGRESAR</a>
     <div class="row">
       <br>
       <div id="salida"> </div>
@@ -1399,7 +1420,7 @@ if ($accion == "42") {
       var myTable = '';
 
       var url = "creditos.php?a=42&s=1";
-      $.getJSON(url, $("#solform").serialize(), function(json) {
+      $.getJSON(url, $("#solform").serialize(), function (json) {
         i = 1;
         if (json.length > 0) {
           if (json[0].pcode == 0) {
@@ -1417,19 +1438,19 @@ if ($accion == "42") {
         } else {
           $('#salida').empty().append('<div class="alert alert-danger" role="alert">Se produjo un error en comunicacion JSON:101</div>');
         }
-      }).error(function() {
+      }).error(function () {
         $('#salida').empty().append('<div class="alert alert-danger" role="alert">Se produjo un error en comunicacion JSON:102</div>');
-      }).complete(function() {
+      }).complete(function () {
         $('#cargando').hide();
         $("#solform :input").attr('readonly', false);
         $("#botones *").removeAttr("disabled");
       });
     }
-	
-	
+
+
   </script>
 
-<?php echo " </form></div></div></div></div>";
+  <?php echo " </form></div></div></div></div>";
   exit;
 } ?>
 
