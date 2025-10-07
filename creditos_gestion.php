@@ -2556,13 +2556,15 @@ if ($accion == Modulos::MODULO_MOSTRAR_GESTION) //TODO gestiones
 				echo campo("monto_financiar", "Total Financiar", 'text', $row["monto_financiar"], 'class=" form-control"  readonly', '', '', 3, 3);
 
 				$option_values = convertir_array_dropdown($lista_plazos, $row["plazo"], true, "value", "value");
-				echo campo("plazo", "Plazo", 'select', $option_values, 'class=" form-control" onchange="calculos_financieros4(); "', '', '', 3, 2);
+				// echo campo("plazo", "Plazo", 'select', $option_values, 'class=" form-control" onchange="calculos_financieros4(); "', '', '', 3, 2);
+				echo campo("plazo", "Plazo", 'select', $option_values, 'class="form-control" onchange="calculos_financieros4()"', '', '', 3, 2);
 
 				$default_value = !empty($row["cierre_interes_mensual"]) ? $row["cierre_interes_mensual"] : "3.98";
 				$option_values = convertir_array_dropdown($lista_perfiles, $default_value, true, "value", "label", "id");
 				echo campo("cierre_interes_mensual", "Perfil", 'select', $option_values, 'class="form-control" onchange="perfil_interes()"', '', '', 3, 3);
 
-				echo campo("tasa", "Tasa", 'text', $row["tasa"], 'class=" form-control"  onchange="calculos_financieros4(); "', '', '', 3, 2); // AQUÍ SE AGREGA LA TASA
+				// echo campo("tasa", "Tasa", 'text', $row["tasa"], 'class=" form-control"  onchange="calculos_financieros4(); "', '', '', 3, 2); // AQUÍ SE AGREGA LA TASA
+				echo campo("tasa", "Tasa", 'text', $row["tasa"], 'class="form-control" onchange="calculos_financieros4();"', '', '', 3, 2);
 
 				echo campo("cierre_interes_moratorio", "", 'text', ($row["cierre_interes_moratorio"] != 0.00 ? $row["cierre_interes_moratorio"] : 3.9), 'class=" form-control"  onchange="" style="display: none;"', '', '', 3, 2);
 				echo '</div>';
@@ -2573,6 +2575,9 @@ if ($accion == Modulos::MODULO_MOSTRAR_GESTION) //TODO gestiones
 				echo "<hr>";
 				echo "<h4>CALCULO RELACION CUOTA INGRESO</h4>";
 				echo campo("cuota", "Cuota Mensual", 'text', $row["cuota"], 'class="form-control" onchange="calculos_financieros2();" readonly', '', '', 3, 2);
+				echo campo("cuota_promocion_octubre", "Cuota Promoción Octubre", 'text', $row["cuota_promocion_octubre"], 'class="form-control" id="cuota_promocion" onchange="calculos_financieros2();" readonly', '', '', 3, 2);
+
+
 				echo campo("endeuda_sueldo_requerido", "Sueldo Requerido", 'text', $row["endeuda_sueldo_requerido"], 'class="form-control "  readonly', '', '', 3, 3);
 
 				echo "<hr>";
@@ -2676,6 +2681,9 @@ if ($accion == Modulos::MODULO_MOSTRAR_GESTION) //TODO gestiones
 
 				echo campo("cuota", "Cuota Mensual", 'text', $row["cuota"], 'class="form-control" onchange="calculos_financieros2();" readonly', '', '', 3, 2);
 
+				echo campo("cuota_promocion_octubre", "Cuota Promoción Octubre", 'text', $row["cuota_promocion_octubre"], 'class="form-control" readonly id="cuota_promocion_octubre"', '', '', 3, 2);
+
+
 				echo '<div id="endeuda2" style="display:none">';
 				echo campo("endeuda_sueldo_requerido", "Sueldo Requerido", 'text', $row["endeuda_sueldo_requerido"], 'class="form-control" readonly', '', '', 3, 3);
 				echo campo("endeuda_sueldo", "Sueldo Neto", 'text', $row["endeuda_sueldo"], 'class="form-control" onchange="calculos_financieros1();"', '', '', 3, 3);
@@ -2696,6 +2704,9 @@ if ($accion == Modulos::MODULO_MOSTRAR_GESTION) //TODO gestiones
             		$(document).ready(function(){
 						$(function () {
 							showValues();
+							 if (typeof window.calcularCuotaPromocionOctubre === "function") {
+								window.calcularCuotaPromocionOctubre();
+							}
 						})
 					});
 				</script>';

@@ -270,6 +270,7 @@ function calculos_financieros1() {
 
 function calculos_financieros2() {
   showValues();
+  calcularCuotaPromocionOctubre();
 
   var t1 = parseFloat($("#endeuda_total").val());
   var t2 = parseFloat($("#endeuda_sueldo").val());
@@ -298,6 +299,7 @@ function calculos_financieros4() {
   $("#monto_financiar").val(total.toFixed(2));
 
   showValues();
+  calcularCuotaPromocionOctubre();
 
   var t9 = parseFloat($("#cuota").val());
   var total9 = 0;
@@ -510,6 +512,7 @@ function perfil_interes() {
   $("#cierre_interes_moratorio").val(interes_moratorio);
   $("#tipo_perfil").val(tipo_perfil);
   showValues();
+  calcularCuotaPromocionOctubre();
 }
 
 function actualizarSelect() {
@@ -1009,3 +1012,50 @@ function asignar_niveles(rid) {
     ],
   });
 }
+
+// function calcularCuotaPromocionOctubre() {
+//   console.log("Ejecutando promoción al inicio", { monto, tasaAnual, plazo });
+
+//   const monto = parseFloat($("#monto_financiar").val()) || 0;
+//   const tasaAnual = parseFloat($("#tasa").val()) || 0;
+//   const plazo = parseInt($("#plazo").val()) || 0;
+
+//   if (monto <= 0 || tasaAnual <= 0 || plazo <= 0) {
+//     $("#cuota_promocion").val("");
+//     return;
+//   }
+
+//   // Cuota normal (igual a showValues)
+//   const interesMensual = (monto * (tasaAnual / 100)) / 12;
+//   const cuotaNormal = interesMensual + monto / plazo;
+
+//   // Interés adicional de 1 mes (distribuido)
+//   const interesExtraDistribuido = interesMensual / plazo;
+//   const cuotaPromocion = cuotaNormal + interesExtraDistribuido;
+
+//   $("#cuota_promocion").val(cuotaPromocion.toFixed(2));
+//   console.log("Ejecutando promoción al final", { monto, tasaAnual, plazo });
+// }
+
+function calcularCuotaPromocionOctubre() {
+  const monto = parseFloat($("#monto_financiar").val()) || 0;
+  const tasaAnual = parseFloat($("#tasa").val()) || 0;
+  const plazo = parseInt($("#plazo").val()) || 0;
+
+  if (monto <= 0 || tasaAnual <= 0 || plazo <= 0) {
+    $("#cuota_promocion").val("");
+    return;
+  }
+
+  const interesMensual = (monto * (tasaAnual / 100)) / 12;
+  const cuotaNormal = interesMensual + monto / plazo;
+
+  const interesExtraDistribuido = interesMensual / plazo;
+  const cuotaPromocion = cuotaNormal + interesExtraDistribuido;
+
+  $("#cuota_promocion").val(cuotaPromocion.toFixed(2));
+  $("#cuota_promocion_octubre").val(cuotaPromocion.toFixed(2));
+}
+
+// 👇 hace la función accesible globalmente
+window.calcularCuotaPromocionOctubre = calcularCuotaPromocionOctubre;
