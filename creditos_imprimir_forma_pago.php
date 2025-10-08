@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+ini_set('display_errors', 0);
+ob_start();
 
 require_once('include/protect.php');
 require_once('include/framework.php');
@@ -48,7 +51,9 @@ if ($result->num_rows > 0) {
     class MYPDF extends TCPDF
     {
         //Page header
-        public function Header() {}
+        public function Header()
+        {
+        }
     }
 
 
@@ -97,9 +102,18 @@ if ($result->num_rows > 0) {
     $html = str_replace("{{codigo_cliente}}", $codigo_cliente, $html);
     $html = str_replace("{{nombre_cliente}}", $nombre_cliente, $html);
 
+    $cuota_mostrar = $informacion_prestamo["cuota"]; // valor por defecto
+
+    if (!empty($informacion_prestamo["aplica_promocion_octubre"]) && $informacion_prestamo["aplica_promocion_octubre"] == 1) {
+        // Si aplica promoción, usar la cuota promocional
+        if (!empty($informacion_prestamo["cuota_promocion_octubre"])) {
+            $cuota_mostrar = $informacion_prestamo["cuota_promocion_octubre"];
+        }
+    }
+
     $html = str_replace("{{total_prestamo}}", number_format($informacion_prestamo["monto_financiar"], 2), $html);
     $html = str_replace("{{plazo}}", $informacion_prestamo["plazo"], $html);
-    $html = str_replace("{{cuota_mensual}}", number_format($informacion_prestamo["cuota"], 2), $html);
+    $html = str_replace("{{cuota_mensual}}", number_format($cuota_mostrar, 2), $html);
     $html = str_replace("{{dia_pago}}", intval($informacion_prestamo["cierre_cuota_dia_pago"]), $html);
 
 
@@ -121,7 +135,7 @@ if ($result->num_rows > 0) {
     $fecha_primera_cuota = new DateTime($informacion_prestamo["cierre_cuota_primera"]);
     // Formatear la fecha
     $dia = $fecha_primera_cuota->format('d');
-    $mes = $meses[(int)$fecha_primera_cuota->format('m')];
+    $mes = $meses[(int) $fecha_primera_cuota->format('m')];
     $anio = $fecha_primera_cuota->format('Y');
 
     $html = str_replace("{{fecha_primera_cuota}}", "{$dia} {$mes} {$anio}", $html);

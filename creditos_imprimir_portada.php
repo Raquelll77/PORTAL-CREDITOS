@@ -3,6 +3,7 @@
 error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 ini_set('display_errors', 0);
 ob_start();
+
 require_once('include/protect.php');
 require_once('include/framework.php');
 
@@ -223,6 +224,12 @@ if ($result->num_rows > 0) {
     $html = str_replace("{claveEnee}", $row["clave_enee"], $html);
     $html = str_replace("{lugar_nacimiento}", $row["lugar_nacimiento"], $html);
     $html = str_replace("{rtn}", $row["rtn"], $html);
+
+    $html = str_replace(
+        "{aplica_promocion_octubre}",
+        ($row["aplica_promocion_octubre"] == 1 ? "SÍ" : "NO"),
+        $html
+    );
 
     $html = str_replace("{moto_marca}", $row["moto_marca"], $html);
     $html = str_replace("{moto_modelo}", $row["moto_modelo"], $html);

@@ -409,7 +409,7 @@ if ($accion == Modulos::MODULO_DATOS_SOLICITUD) //TODO Datos Generales
 				'<option value="0">No</option><option value="1">Sí</option>',
 				$row["aplica_promocion_octubre"]
 			),
-			'class="form-control" onchange="togglePromoOctubre(this.value)"',
+			'class="form-control"',
 			'',
 			'',
 			3,

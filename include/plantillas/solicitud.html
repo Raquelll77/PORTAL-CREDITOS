@@ -99,10 +99,13 @@
         <col style="width: 16.66%" />
       </colgroup>
       <tr>
-        <td colspan="2" class="bottom left">
+        <td colspan="1" class="bottom left">
           Monto: {cierre_total_usd_contado}
         </td>
         <td colspan="2" class="bottom">Plazo: {cierre_plazo} meses</td>
+        <td colspan="1" class="bottom">
+          Aplica Promo: {aplica_promocion_octubre}
+        </td>
         <td colspan="2" class="bottom right">
           Prima: {cierre_total_prima_usd}
         </td>
@@ -258,9 +261,8 @@
           {telefono_movil} &nbsp;&nbsp; Correo Electrónico: {correo}
         </td>
       </tr>
-	  
     </table>
-	    <table style="border-collapse: collapse; width: 100%" cellpadding="4">
+    <table style="border-collapse: collapse; width: 100%" cellpadding="4">
       <tr>
         <th colspan="6" class="border2" style="background-color: #ececec">
           <b>IV. Datos del Aval</b>
@@ -276,16 +278,19 @@
           {noNacionalidad} ) ¿Cuál?: {nacionalidadExtra}
         </td>
         <td colspan="2" class="border">
-  Género: &nbsp;&nbsp; F( {aval_femenino} ) M( {aval_masculino} )
-</td>
+          Género: &nbsp;&nbsp; F( {aval_femenino} ) M( {aval_masculino} )
+        </td>
       </tr>
       <tr>
-        <td colspan="4" class="border">Dirección de Residencia: {aval_direccion}</td>
+        <td colspan="4" class="border">
+          Dirección de Residencia: {aval_direccion}
+        </td>
         <td colspan="2" class="border">Estado Civil: {aval_estado_civil}</td>
       </tr>
       <tr>
         <td colspan="6" class="border">
-          Departamento: {aval_departamento} &nbsp;&nbsp; Ciudad: {aval_ciudad} &nbsp;&nbsp;
+          Departamento: {aval_departamento} &nbsp;&nbsp; Ciudad: {aval_ciudad}
+          &nbsp;&nbsp;
         </td>
       </tr>
       <tr>
@@ -295,11 +300,10 @@
       </tr>
       <tr>
         <td colspan="6" class="bottom left right">
-          Teléfono Móvil:
-          {aval_celular} &nbsp;&nbsp; Correo Electrónico: {aval_email}
+          Teléfono Móvil: {aval_celular} &nbsp;&nbsp; Correo Electrónico:
+          {aval_email}
         </td>
       </tr>
-	  
     </table>
     <table style="border-collapse: collapse; width: 100%" cellpadding="6">
       <tr>
@@ -619,8 +623,7 @@
         <td colspan="2" class=""></td>
         <td colspan="2" class="right bottom" style="text-align: center"></td>
       </tr>
-{filaFirmas}
-
+      {filaFirmas}
     </table>
     <table style="border-collapse: collapse; width: 100%" cellpadding="6">
       <tr>
