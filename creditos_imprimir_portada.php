@@ -49,6 +49,11 @@ if ($result->num_rows > 0) {
                 direccion,
                 direccion_referencia,
                 celular,
+                empresa,
+                empresa_direccion,
+                empresa_telefono,
+                empresa_telefono2,
+                empresa_salario,
                 email,
                 sexo   
             FROM prestamo_aval
@@ -75,6 +80,7 @@ if ($result->num_rows > 0) {
         }
 
         $firmaPrevencion = strtoupper($clienteNombre . $nombreAval);
+        $empresa_telefono = !empty($aval["empresa_telefono"]) ? $aval["empresa_telefono"] : $aval["empresa_telefono2"];
 
         // Reemplazar en la plantilla
         $html = str_replace("{aval_nombre}", $aval["nombrecompleto"], $html);
@@ -86,6 +92,10 @@ if ($result->num_rows > 0) {
         $html = str_replace("{aval_direccion_referencia}", $aval["direccion_referencia"], $html);
         $html = str_replace("{aval_celular}", $aval["celular"], $html);
         $html = str_replace("{aval_email}", $aval["email"], $html);
+        $html = str_replace("{aval_salario}", $aval["empresa_salario"], $html);
+        $html = str_replace("{aval_empresa}", $aval["empresa"], $html);
+        $html = str_replace("{aval_empresa_direccion}", $aval["empresa_direccion"], $html);
+        $html = str_replace("{aval_empresa_telefono}", $empresa_telefono, $html);
 
         if ($aval["sexo"] == "MASCULINO") {
             $html = str_replace("{aval_masculino}", "x", $html);
